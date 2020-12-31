@@ -1,0 +1,9 @@
+[package]
+authors = ["Tommaso Pifferi <p.tommy93@gmail.com>"]
+edition = "2018"
+name = "mozjpeg-wasm"
+version = "0.1.0"
+
+[dependencies]
+mozjpeg-sys = "0.10.11"
+wee_alloc = "0.4.5"

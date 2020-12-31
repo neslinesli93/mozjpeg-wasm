@@ -1,0 +1,6 @@
+/target
+/node_modules
+/pkg
+/dist
+build.sh
+
