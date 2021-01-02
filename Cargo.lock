@@ -45,6 +45,7 @@ checksum = "8452105ba047068f40ff7093dd1d9da90898e63dd61736462e9cdda6a90ad3c3"
 [[package]]
 name = "mozjpeg-sys"
 version = "0.10.11"
+source = "git+https://github.com/neslinesli93/mozjpeg-sys?branch=feature/jpeg-transform-module#4846e2197fc84975bf6a082e714067e8aea4887a"
 dependencies = [
  "cc",
  "dunce",

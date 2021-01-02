@@ -10,5 +10,5 @@ wee_alloc = "0.4.5"
 [dependencies.mozjpeg-sys]
 default-features = false
 features = ["jpegtran"]
-path = "/home/neslinesli93/STUFF/mozjpeg-sys"
-version = "0.10.11"
+git = "https://github.com/neslinesli93/mozjpeg-sys"
+branch = "feature/jpeg-transform-module"
