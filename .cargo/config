@@ -1,4 +1,4 @@
 [target.wasm32-unknown-emscripten]
 rustflags = [
-    "-Clink-args=-Os --closure 1 -s EXTRA_EXPORTED_RUNTIME_METHODS=['cwrap','ccall'] -s ALLOW_MEMORY_GROWTH=1 -s MODULARIZE=1 -s ENVIRONMENT=web",
+    "-Clink-args=-Os -s EXTRA_EXPORTED_RUNTIME_METHODS=['cwrap','ccall'] -s ALLOW_MEMORY_GROWTH=1 -s MODULARIZE=1 -s ENVIRONMENT=web",
 ]
