@@ -1,6 +1,6 @@
 {
   "name": "@neslinesli93/mozjpeg-wasm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "WASM wrapper of mozjpeg-sys, exposing functions to re-encode JPEG images and apply transformations to them",
   "main": "lib/mozjpeg-wasm.js",
   "scripts": {
