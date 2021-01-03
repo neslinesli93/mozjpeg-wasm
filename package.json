@@ -10,5 +10,10 @@
   "license": "MIT",
   "files": [
     "lib"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neslinesli93/mozjpeg-wasm.git"
+  },
+  "homepage": "https://github.com/neslinesli93/mozjpeg-wasm"
 }
