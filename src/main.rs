@@ -38,7 +38,6 @@ unsafe fn decode(input: *const u8, input_size: u32) -> (Vec<u8>, u32, u32) {
 
     let width = cinfo.image_width;
     let height = cinfo.image_height;
-    println!("Image size {}x{}", width, height);
 
     cinfo.out_color_space = J_COLOR_SPACE::JCS_RGB;
     jpeg_start_decompress(&mut cinfo);
@@ -52,8 +51,6 @@ unsafe fn decode(input: *const u8, input_size: u32) -> (Vec<u8>, u32, u32) {
         jpeg_read_scanlines(&mut cinfo, jsamparray.as_mut_ptr(), 1);
     }
 
-    println!("Decoded into {} raw pixel bytes", buffer.len());
-
     jpeg_finish_decompress(&mut cinfo);
     jpeg_destroy_decompress(&mut cinfo);
 
@@ -61,7 +58,6 @@ unsafe fn decode(input: *const u8, input_size: u32) -> (Vec<u8>, u32, u32) {
 }
 
 unsafe fn encode(inbuf: &[u8], width: u32, height: u32, quality: u32) -> (*const u8, u32) {
-    println!("Start encoding");
     let mut err = mem::zeroed();
     let mut cinfo: jpeg_compress_struct = mem::zeroed();
     cinfo.common.err = jpeg_std_error(&mut err);
