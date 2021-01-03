@@ -1,7 +1,7 @@
 {
   "name": "@neslinesli93/mozjpeg-wasm",
   "version": "1.0.0",
-  "description": "WASM wrapper of mozjpeg, exposing functions to re-encode JPEG images to reduce their size on disk and keep the same quality",
+  "description": "WASM wrapper of mozjpeg-sys, exposing functions to re-encode JPEG images and apply transformations to them",
   "main": "lib/mozjpeg-wasm.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
