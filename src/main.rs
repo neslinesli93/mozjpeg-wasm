@@ -7,6 +7,39 @@ use std::os::raw::{c_char, c_ulong};
 
 use crate::transform::{transform, Transform};
 
+#[repr(C)]
+pub struct JpegData {
+    pointer: u32,
+    size: u32,
+}
+
+#[no_mangle]
+pub fn new_convert(
+    input: *const u8,
+    input_size: u32,
+    quality: u32,
+    orientation: u32,
+) -> *mut JpegData {
+    unsafe {
+        let (data, width, height) = decode(input, input_size);
+        let (output, output_size) = encode(&data, width, height, quality);
+
+        let transform_opt: Transform = orientation.into();
+        let (result, result_size) = if transform_opt.no_transform() {
+            (output, output_size)
+        } else {
+            transform(output, output_size, transform_opt)
+        };
+
+        let boxed = Box::new(JpegData {
+            pointer: result as u32,
+            size: result_size,
+        });
+        Box::into_raw(boxed)
+    }
+}
+
+/// Deprecated, will be removed soon. Use `new_convert`
 #[no_mangle]
 pub fn convert(input: *const u8, input_size: u32, quality: u32, orientation: u32) -> *const c_char {
     unsafe {
