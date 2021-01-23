@@ -5,10 +5,5 @@ name = "mozjpeg-wasm"
 version = "0.1.0"
 
 [dependencies]
+mozjpeg-sys = { version = "0.10.12", features = ["jpegtran"], default-features = false }
 wee_alloc = "0.4.5"
-
-[dependencies.mozjpeg-sys]
-default-features = false
-features = ["jpegtran"]
-git = "https://github.com/neslinesli93/mozjpeg-sys"
-branch = "feature/jpeg-transform-module"
