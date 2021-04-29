@@ -1,9 +1,8 @@
 pub mod transform;
 
 use mozjpeg_sys::*;
-use std::ffi::CString;
 use std::mem;
-use std::os::raw::{c_char, c_ulong};
+use std::os::raw::c_ulong;
 
 use crate::transform::{transform, Transform};
 
@@ -36,26 +35,6 @@ pub fn new_convert(
             size: result_size,
         });
         Box::into_raw(boxed)
-    }
-}
-
-/// Deprecated, will be removed soon. Use `new_convert`
-#[no_mangle]
-pub fn convert(input: *const u8, input_size: u32, quality: u32, orientation: u32) -> *const c_char {
-    unsafe {
-        let (data, width, height) = decode(input, input_size);
-        let (output, output_size) = encode(&data, width, height, quality);
-
-        let transform_opt: Transform = orientation.into();
-        let (result, result_size) = if transform_opt.no_transform() {
-            (output, output_size)
-        } else {
-            transform(output, output_size, transform_opt)
-        };
-
-        CString::new(format!("{:?}|{:?}", result, result_size))
-            .unwrap()
-            .into_raw()
     }
 }
 
