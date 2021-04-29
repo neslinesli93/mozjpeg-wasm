@@ -1,5 +1,7 @@
 # mozjpeg-wasm
 
+![npm (scoped)](https://img.shields.io/npm/v/@neslinesli93/mozjpeg-wasm)
+
 This library wraps [`mozjpeg-sys`](https://github.com/kornelski/mozjpeg-sys) and exposes a few functions to perform decoding, encoding and simple transformation on JPEG images using [`mozjpeg`](https://github.com/mozilla/mozjpeg).
 
 Everything is compiled to WebAssembly and bundled in an NPM package which can be used directly in a browser.
