@@ -5,5 +5,5 @@ name = "mozjpeg-wasm"
 version = "0.1.0"
 
 [dependencies]
-mozjpeg-sys = { version = "0.10.12", features = ["jpegtran"], default-features = false }
+mozjpeg-sys = { version = "0.10.13", features = ["jpegtran"], default-features = false }
 wee_alloc = "0.4.5"
