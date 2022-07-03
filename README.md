@@ -29,8 +29,8 @@ Prerequisites:
 2. Rust (>= `1.48.0`)
 3. Rust target `wasm32-unknown-emscripten`
 
-Then you can launch this cargo command:
+Then you can use the following script which builds the crate using `wasm32-unknown-emscripten` target and move the resulting js/wasm files to `lib`:
 
 ```sh
-$ cargo build --target wasm32-unknown-emscripten
+$ ./build.sh
 ```
